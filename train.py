@@ -109,5 +109,5 @@ def test_network(
             num_correct += num_corr
             num_correct_5 += num_corr_5
         print(
-            f"Test Loss: {np.mean(loss):.4f}, Test Accuracy: {num_correct/num_examples:.4f}, Test Accuracy Top-5: {num_correct_5/num_examples:.4f}"
+            f"Test Loss: {np.mean(test_loss):.4f}, Test Accuracy: {num_correct/num_examples:.4f}, Test Accuracy Top-5: {num_correct_5/num_examples:.4f}"
         )
