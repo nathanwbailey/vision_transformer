@@ -4,12 +4,29 @@ from typing import Callable
 import numpy as np
 import torch
 
-def calculate_accuracy(outputs: torch.Tensor, ground_truth: torch.Tensor) -> tuple[int, int]:
+
+def calculate_accuracy(
+    outputs: torch.Tensor, ground_truth: torch.Tensor
+) -> tuple[int, int]:
     """Simple Function to Calculate Acccuracy."""
     softmaxed_output = torch.nn.functional.softmax(outputs, dim=1)
     predictions = torch.argmax(softmaxed_output, dim=1)
     num_correct = int(torch.sum(torch.eq(predictions, ground_truth)).item())
     return num_correct, ground_truth.size()[0]
+
+
+def calculate_accuracy_top_5(
+    outputs: torch.Tensor, ground_truth: torch.Tensor
+) -> tuple[int, int]:
+    """Simple Function to Calculate Top-5 Acccuracy."""
+    num_correct = 0
+    softmaxed_output = torch.nn.functional.softmax(outputs, dim=1)
+    predictions = torch.argsort(softmaxed_output, dim=1, descending=True)
+    for idx, x in enumerate(ground_truth):
+        if torch.isin(x, predictions[idx, :4]):
+            num_correct += 1
+    return num_correct, ground_truth.size(0)
+
 
 def train_network(
     model: torch.nn.Module,
@@ -30,6 +47,8 @@ def train_network(
         num_correct_train = 0
         num_examples_valid = 0
         num_correct_valid = 0
+        num_correct_train_5 = 0
+        num_correct_valid_5 = 0
         model.train()
         for batch in trainloader:
             optimizer.zero_grad()
@@ -41,8 +60,10 @@ def train_network(
             optimizer.step()
             train_loss.append(loss.item())
             num_corr, num_ex = calculate_accuracy(outputs, y)
+            num_corr_5, _ = calculate_accuracy_top_5(outputs, y)
             num_examples_train += num_ex
             num_correct_train += num_corr
+            num_correct_train_5 += num_corr_5
 
         model.eval()
         with torch.no_grad():
@@ -53,11 +74,15 @@ def train_network(
                 loss = loss_function(outputs, labels)
                 valid_loss.append(loss.item())
                 num_corr, num_ex = calculate_accuracy(outputs, labels)
+                num_corr_5, _ = calculate_accuracy_top_5(outputs, labels)
                 num_examples_valid += num_ex
                 num_correct_valid += num_corr
+                num_correct_valid_5 += num_corr_5
 
+        print(
+            f"Epoch: {epoch}, Training Loss: {np.mean(train_loss):.4f}, Validation Loss: {np.mean(valid_loss):.4f}, Training Accuracy: {num_correct_train/num_examples_train:.4f}, Validation Accuracy: {num_correct_valid/num_examples_valid:.4f}, Training Accuracy Top-5: {num_correct_train_5/num_examples_train:.4f}, Validation Accuracy Top-5: {num_correct_valid_5/num_examples_valid:.4f}"
+        )
 
-        print(f"Epoch: {epoch}, Training Loss: {np.mean(train_loss):.4f}, Validation Loss: {np.mean(valid_loss):.4f}, Training Accuracy: {num_correct_train/num_examples_train:.4f}, Validation Accuracy: {num_correct_valid/num_examples_valid:.4f}")
 
 def test_network(
     model: torch.nn.Module,
@@ -65,9 +90,11 @@ def test_network(
     testloader: torch.utils.data.DataLoader,
     device: torch.device,
 ) -> None:
+    """Test the Network."""
     test_loss = []
     num_examples = 0
     num_correct = 0
+    num_correct_5 = 0
     model.eval()
     with torch.no_grad():
         for batch in testloader:
@@ -77,6 +104,10 @@ def test_network(
             loss = loss_function(output, labels)
             test_loss.append(loss.item())
             num_corr, num_ex = calculate_accuracy(output, labels)
+            num_corr_5, _ = calculate_accuracy_top_5(output, labels)
             num_examples += num_ex
             num_correct += num_corr
-        print(f"Test Loss: {np.mean(loss):.4f}, Test Accuracy: {num_correct/num_examples:.4f}")
+            num_correct_5 += num_corr_5
+        print(
+            f"Test Loss: {np.mean(loss):.4f}, Test Accuracy: {num_correct/num_examples:.4f}, Test Accuracy Top-5: {num_correct_5/num_examples:.4f}"
+        )

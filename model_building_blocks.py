@@ -2,8 +2,10 @@ from typing import Type
 
 import torch
 
+
 class CreatePatchesLayer(torch.nn.Module):
     """Custom PyTorch Layer to Extract Patches from Images."""
+
     def __init__(
         self,
         patch_size: int,
@@ -11,8 +13,10 @@ class CreatePatchesLayer(torch.nn.Module):
     ) -> None:
         """Init Variables."""
         super().__init__()
-        self.unfold_layer = torch.nn.Unfold(kernel_size=patch_size, stride=strides)
-    
+        self.unfold_layer = torch.nn.Unfold(
+            kernel_size=patch_size, stride=strides
+        )
+
     def forward(self, images: torch.Tensor) -> torch.Tensor:
         """Forward Pass to Create Patches."""
         patched_images = self.unfold_layer(images)
@@ -21,23 +25,42 @@ class CreatePatchesLayer(torch.nn.Module):
 
 class PatchEmbeddingLayer(torch.nn.Module):
     """Positional Embedding Layer for Images of Patches."""
-    def __init__(self, num_patches: int, batch_size: int, patch_size: int, embed_dim: int, device: torch.device) -> None:
+
+    def __init__(
+        self,
+        num_patches: int,
+        batch_size: int,
+        patch_size: int,
+        embed_dim: int,
+        device: torch.device,
+    ) -> None:
         """Init Function."""
         super().__init__()
         self.num_patches = num_patches
         self.patch_size = patch_size
         self.position_emb = torch.nn.Embedding(
-            num_embeddings=num_patches+1, embedding_dim=embed_dim
+            num_embeddings=num_patches + 1, embedding_dim=embed_dim
         )
-        self.projection_layer = torch.nn.Linear(patch_size*patch_size*3, embed_dim)
-        self.class_parameter = torch.nn.Parameter(torch.rand(batch_size, 1, embed_dim).to(device), requires_grad=True)
+        self.projection_layer = torch.nn.Linear(
+            patch_size * patch_size * 3, embed_dim
+        )
+        self.class_parameter = torch.nn.Parameter(
+            torch.rand(batch_size, 1, embed_dim).to(device),
+            requires_grad=True,
+        )
         self.device = device
-    
+
     def forward(self, patches: torch.Tensor) -> torch.Tensor:
         """Forward Pass."""
-        positions = torch.arange(start=0, end=self.num_patches+1, step=1).to(self.device).unsqueeze(dim=0)
+        positions = (
+            torch.arange(start=0, end=self.num_patches + 1, step=1)
+            .to(self.device)
+            .unsqueeze(dim=0)
+        )
         patches = self.projection_layer(patches)
-        encoded_patches = torch.cat((self.class_parameter, patches), dim=1) + self.position_emb(positions)
+        encoded_patches = torch.cat(
+            (self.class_parameter, patches), dim=1
+        ) + self.position_emb(positions)
         return encoded_patches
 
 
@@ -49,7 +72,7 @@ def create_mlp_block(
 ) -> torch.nn.Module:
     """Create a Feed Forward Network for the Transformer Layer."""
     layer_list = []
-    for idx in range( # pylint: disable=consider-using-enumerate
+    for idx in range(  # pylint: disable=consider-using-enumerate
         len(output_features)
     ):
         if idx == 0:

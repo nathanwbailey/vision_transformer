@@ -1,9 +1,9 @@
 import pytorch_model_summary as pms
 import torch
 import torchvision
+
 from model import ViTClassifierModel
-from train import train_network
-from train import test_network
+from train import test_network, train_network
 
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 LEARNING_RATE = 0.001
@@ -86,6 +86,7 @@ trainloader = torch.utils.data.DataLoader(
     shuffle=True,
     pin_memory=True,
     num_workers=4,
+    drop_last=True,
 )
 validloader = torch.utils.data.DataLoader(
     valid_set,
@@ -93,6 +94,7 @@ validloader = torch.utils.data.DataLoader(
     shuffle=False,
     pin_memory=True,
     num_workers=4,
+    drop_last=True,
 )
 testloader = torch.utils.data.DataLoader(
     test_set,
@@ -100,19 +102,20 @@ testloader = torch.utils.data.DataLoader(
     shuffle=False,
     pin_memory=True,
     num_workers=4,
+    drop_last=True,
 )
 
 model = ViTClassifierModel(
     num_transformer_layers=TRANSFORMER_LAYERS,
     embed_dim=PROJECTION_DIM,
-    feed_forward_dim=PROJECTION_DIM*2,
+    feed_forward_dim=PROJECTION_DIM * 2,
     num_heads=NUM_HEADS,
     patch_size=PATCH_SIZE,
     num_patches=NUM_PATCHES,
     mlp_head_units=MLP_HEAD_UNITS,
     num_classes=100,
     batch_size=BATCH_SIZE,
-    device=DEVICE
+    device=DEVICE,
 ).to(DEVICE)
 
 pms.summary(
@@ -124,9 +127,26 @@ pms.summary(
     show_parent_layers=True,
 )
 
-optimizer = torch.optim.AdamW(params=filter(lambda param: param.requires_grad, model.parameters()), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY)
+optimizer = torch.optim.AdamW(
+    params=filter(lambda param: param.requires_grad, model.parameters()),
+    lr=LEARNING_RATE,
+    weight_decay=WEIGHT_DECAY,
+)
 loss_function = torch.nn.CrossEntropyLoss()
 
-train_network(model=model, num_epochs=NUM_EPOCHS, optimizer=optimizer, loss_function=loss_function, trainloader=trainloader, validloader=validloader, device=DEVICE)
+train_network(
+    model=model,
+    num_epochs=NUM_EPOCHS,
+    optimizer=optimizer,
+    loss_function=loss_function,
+    trainloader=trainloader,
+    validloader=validloader,
+    device=DEVICE,
+)
 
-test_network(model=model, loss_function=loss_function, testloader=testloader, device=DEVICE)
+test_network(
+    model=model,
+    loss_function=loss_function,
+    testloader=testloader,
+    device=DEVICE,
+)
