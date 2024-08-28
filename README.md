@@ -16,6 +16,8 @@ The main code is located in the following files:
 * train.py - Trains the PyTorch Model
 * lint.sh - runs linters on the code
 
+Training Results are shown below:
 
-
-![Top-5 Accuracy](https://github.com/user-attachments/assets/7b7f24a7-c3c5-4c01-a98f-afd80ade0bbf) ![Top-1 Accuracy](https://github.com/user-attachments/assets/c2a2be9c-d677-427f-b459-fe20c6d3621a)
+![Loss](https://github.com/user-attachments/assets/e64ee812-90d5-4456-8d97-6163a0ca1f37)
+![Top-5 Accuracy](https://github.com/user-attachments/assets/7b7f24a7-c3c5-4c01-a98f-afd80ade0bbf) 
+![Top-1 Accuracy](https://github.com/user-attachments/assets/c2a2be9c-d677-427f-b459-fe20c6d3621a)
