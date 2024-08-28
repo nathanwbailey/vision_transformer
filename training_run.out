@@ -1,0 +1,205 @@
+Files already downloaded and verified
+tensor([0.5071, 0.4865, 0.4409])
+tensor([0.2653, 0.2546, 0.2740])
+Files already downloaded and verified
+Files already downloaded and verified
+----------------------------------------------------------------------------------------------------------------
+                            Parent Layers       Layer (type)        Output Shape         Param #     Tr. Param #
+================================================================================================================
+    ViTClassifierModel/CreatePatchesLayer           Unfold-1      [32, 108, 144]               0               0
+   ViTClassifierModel/PatchEmbeddingLayer           Linear-2       [32, 144, 64]           6,976           6,976
+   ViTClassifierModel/PatchEmbeddingLayer        Embedding-3        [1, 145, 64]           9,280           9,280
+      ViTClassifierModel/TransformerBlock        LayerNorm-4       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock          Dropout-5       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock        LayerNorm-6       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock           Linear-7      [32, 145, 128]           8,320           8,320
+      ViTClassifierModel/TransformerBlock             GELU-8      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock          Dropout-9      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock          Linear-10       [32, 145, 64]           8,256           8,256
+      ViTClassifierModel/TransformerBlock            GELU-11       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-12       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-13       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock       LayerNorm-14       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock         Dropout-15       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-16       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock          Linear-17      [32, 145, 128]           8,320           8,320
+      ViTClassifierModel/TransformerBlock            GELU-18      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-19      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock          Linear-20       [32, 145, 64]           8,256           8,256
+      ViTClassifierModel/TransformerBlock            GELU-21       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-22       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-23       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock       LayerNorm-24       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock         Dropout-25       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-26       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock          Linear-27      [32, 145, 128]           8,320           8,320
+      ViTClassifierModel/TransformerBlock            GELU-28      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-29      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock          Linear-30       [32, 145, 64]           8,256           8,256
+      ViTClassifierModel/TransformerBlock            GELU-31       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-32       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-33       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock       LayerNorm-34       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock         Dropout-35       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-36       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock          Linear-37      [32, 145, 128]           8,320           8,320
+      ViTClassifierModel/TransformerBlock            GELU-38      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-39      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock          Linear-40       [32, 145, 64]           8,256           8,256
+      ViTClassifierModel/TransformerBlock            GELU-41       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-42       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-43       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock       LayerNorm-44       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock         Dropout-45       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-46       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock          Linear-47      [32, 145, 128]           8,320           8,320
+      ViTClassifierModel/TransformerBlock            GELU-48      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-49      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock          Linear-50       [32, 145, 64]           8,256           8,256
+      ViTClassifierModel/TransformerBlock            GELU-51       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-52       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-53       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock       LayerNorm-54       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock         Dropout-55       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-56       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock          Linear-57      [32, 145, 128]           8,320           8,320
+      ViTClassifierModel/TransformerBlock            GELU-58      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-59      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock          Linear-60       [32, 145, 64]           8,256           8,256
+      ViTClassifierModel/TransformerBlock            GELU-61       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-62       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-63       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock       LayerNorm-64       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock         Dropout-65       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-66       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock          Linear-67      [32, 145, 128]           8,320           8,320
+      ViTClassifierModel/TransformerBlock            GELU-68      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-69      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock          Linear-70       [32, 145, 64]           8,256           8,256
+      ViTClassifierModel/TransformerBlock            GELU-71       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-72       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-73       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock       LayerNorm-74       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock         Dropout-75       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-76       [32, 145, 64]             128             128
+      ViTClassifierModel/TransformerBlock          Linear-77      [32, 145, 128]           8,320           8,320
+      ViTClassifierModel/TransformerBlock            GELU-78      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-79      [32, 145, 128]               0               0
+      ViTClassifierModel/TransformerBlock          Linear-80       [32, 145, 64]           8,256           8,256
+      ViTClassifierModel/TransformerBlock            GELU-81       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock         Dropout-82       [32, 145, 64]               0               0
+      ViTClassifierModel/TransformerBlock       LayerNorm-83       [32, 145, 64]             128             128
+                       ViTClassifierModel          Linear-84          [32, 2048]         133,120         133,120
+                       ViTClassifierModel            GELU-85          [32, 2048]               0               0
+                       ViTClassifierModel         Dropout-86          [32, 2048]               0               0
+                       ViTClassifierModel          Linear-87          [32, 1024]       2,098,176       2,098,176
+                       ViTClassifierModel            GELU-88          [32, 1024]               0               0
+                       ViTClassifierModel         Dropout-89          [32, 1024]               0               0
+                       ViTClassifierModel          Linear-90           [32, 100]         102,500         102,500
+================================================================================================================
+Total params: 2,485,732
+Trainable params: 2,485,732
+Non-trainable params: 0
+----------------------------------------------------------------------------------------------------------------
+Training Started
+Epoch: 1, Training Loss: 4.0868, Validation Loss: 3.7237, Training Accuracy: 0.0666, Validation Accuracy: 0.1211, Training Accuracy Top-5: 0.2008, Validation Accuracy Top-5: 0.3030
+Epoch: 2, Training Loss: 3.5925, Validation Loss: 3.4030, Training Accuracy: 0.1379, Validation Accuracy: 0.1733, Training Accuracy Top-5: 0.3470, Validation Accuracy Top-5: 0.4035
+Epoch: 3, Training Loss: 3.3513, Validation Loss: 3.1241, Training Accuracy: 0.1800, Validation Accuracy: 0.2246, Training Accuracy Top-5: 0.4171, Validation Accuracy Top-5: 0.4736
+Epoch: 4, Training Loss: 3.1852, Validation Loss: 2.9654, Training Accuracy: 0.2110, Validation Accuracy: 0.2554, Training Accuracy Top-5: 0.4617, Validation Accuracy Top-5: 0.5108
+Epoch: 5, Training Loss: 3.0475, Validation Loss: 2.8765, Training Accuracy: 0.2374, Validation Accuracy: 0.2744, Training Accuracy Top-5: 0.4960, Validation Accuracy Top-5: 0.5348
+Epoch: 6, Training Loss: 2.9468, Validation Loss: 2.8134, Training Accuracy: 0.2589, Validation Accuracy: 0.2777, Training Accuracy Top-5: 0.5240, Validation Accuracy Top-5: 0.5505
+Epoch: 7, Training Loss: 2.8613, Validation Loss: 2.7720, Training Accuracy: 0.2743, Validation Accuracy: 0.2843, Training Accuracy Top-5: 0.5471, Validation Accuracy Top-5: 0.5552
+Epoch: 8, Training Loss: 2.7891, Validation Loss: 2.6716, Training Accuracy: 0.2893, Validation Accuracy: 0.3095, Training Accuracy Top-5: 0.5637, Validation Accuracy Top-5: 0.5900
+Epoch: 9, Training Loss: 2.7153, Validation Loss: 2.6217, Training Accuracy: 0.3014, Validation Accuracy: 0.3227, Training Accuracy Top-5: 0.5809, Validation Accuracy Top-5: 0.5963
+Epoch: 10, Training Loss: 2.6576, Validation Loss: 2.5345, Training Accuracy: 0.3171, Validation Accuracy: 0.3466, Training Accuracy Top-5: 0.5939, Validation Accuracy Top-5: 0.6240
+Epoch: 11, Training Loss: 2.5972, Validation Loss: 2.4548, Training Accuracy: 0.3279, Validation Accuracy: 0.3582, Training Accuracy Top-5: 0.6085, Validation Accuracy Top-5: 0.6399
+Epoch: 12, Training Loss: 2.5429, Validation Loss: 2.4247, Training Accuracy: 0.3392, Validation Accuracy: 0.3641, Training Accuracy Top-5: 0.6227, Validation Accuracy Top-5: 0.6392
+Epoch: 13, Training Loss: 2.4957, Validation Loss: 2.4063, Training Accuracy: 0.3469, Validation Accuracy: 0.3631, Training Accuracy Top-5: 0.6328, Validation Accuracy Top-5: 0.6471
+Epoch: 14, Training Loss: 2.4553, Validation Loss: 2.3603, Training Accuracy: 0.3561, Validation Accuracy: 0.3812, Training Accuracy Top-5: 0.6409, Validation Accuracy Top-5: 0.6565
+Epoch: 15, Training Loss: 2.4106, Validation Loss: 2.3729, Training Accuracy: 0.3679, Validation Accuracy: 0.3772, Training Accuracy Top-5: 0.6526, Validation Accuracy Top-5: 0.6606
+Epoch: 16, Training Loss: 2.3730, Validation Loss: 2.2741, Training Accuracy: 0.3755, Validation Accuracy: 0.3997, Training Accuracy Top-5: 0.6595, Validation Accuracy Top-5: 0.6816
+Epoch: 17, Training Loss: 2.3286, Validation Loss: 2.3031, Training Accuracy: 0.3824, Validation Accuracy: 0.3999, Training Accuracy Top-5: 0.6700, Validation Accuracy Top-5: 0.6733
+Epoch: 18, Training Loss: 2.2917, Validation Loss: 2.2414, Training Accuracy: 0.3909, Validation Accuracy: 0.4068, Training Accuracy Top-5: 0.6807, Validation Accuracy Top-5: 0.6878
+Epoch: 19, Training Loss: 2.2522, Validation Loss: 2.1976, Training Accuracy: 0.4011, Validation Accuracy: 0.4204, Training Accuracy Top-5: 0.6876, Validation Accuracy Top-5: 0.6977
+Epoch: 20, Training Loss: 2.2261, Validation Loss: 2.1685, Training Accuracy: 0.4042, Validation Accuracy: 0.4266, Training Accuracy Top-5: 0.6933, Validation Accuracy Top-5: 0.7034
+Epoch: 21, Training Loss: 2.1972, Validation Loss: 2.1415, Training Accuracy: 0.4125, Validation Accuracy: 0.4219, Training Accuracy Top-5: 0.7001, Validation Accuracy Top-5: 0.7114
+Epoch: 22, Training Loss: 2.1662, Validation Loss: 2.1837, Training Accuracy: 0.4195, Validation Accuracy: 0.4273, Training Accuracy Top-5: 0.7084, Validation Accuracy Top-5: 0.7030
+Epoch: 23, Training Loss: 2.1343, Validation Loss: 2.1922, Training Accuracy: 0.4248, Validation Accuracy: 0.4235, Training Accuracy Top-5: 0.7131, Validation Accuracy Top-5: 0.7066
+Epoch: 24, Training Loss: 2.1150, Validation Loss: 2.1380, Training Accuracy: 0.4304, Validation Accuracy: 0.4359, Training Accuracy Top-5: 0.7176, Validation Accuracy Top-5: 0.7176
+Epoch: 25, Training Loss: 2.0933, Validation Loss: 2.1639, Training Accuracy: 0.4342, Validation Accuracy: 0.4286, Training Accuracy Top-5: 0.7205, Validation Accuracy Top-5: 0.7101
+Epoch: 26, Training Loss: 2.0597, Validation Loss: 2.0878, Training Accuracy: 0.4411, Validation Accuracy: 0.4458, Training Accuracy Top-5: 0.7289, Validation Accuracy Top-5: 0.7189
+Epoch: 27, Training Loss: 2.0372, Validation Loss: 2.1139, Training Accuracy: 0.4444, Validation Accuracy: 0.4427, Training Accuracy Top-5: 0.7355, Validation Accuracy Top-5: 0.7195
+Epoch: 28, Training Loss: 2.0221, Validation Loss: 2.0915, Training Accuracy: 0.4502, Validation Accuracy: 0.4500, Training Accuracy Top-5: 0.7364, Validation Accuracy Top-5: 0.7193
+Epoch: 29, Training Loss: 2.0031, Validation Loss: 2.0804, Training Accuracy: 0.4549, Validation Accuracy: 0.4543, Training Accuracy Top-5: 0.7417, Validation Accuracy Top-5: 0.7183
+Epoch: 30, Training Loss: 1.9837, Validation Loss: 2.0500, Training Accuracy: 0.4577, Validation Accuracy: 0.4586, Training Accuracy Top-5: 0.7447, Validation Accuracy Top-5: 0.7360
+Epoch: 31, Training Loss: 1.9546, Validation Loss: 2.0750, Training Accuracy: 0.4663, Validation Accuracy: 0.4543, Training Accuracy Top-5: 0.7520, Validation Accuracy Top-5: 0.7302
+Epoch: 32, Training Loss: 1.9466, Validation Loss: 2.0046, Training Accuracy: 0.4659, Validation Accuracy: 0.4663, Training Accuracy Top-5: 0.7535, Validation Accuracy Top-5: 0.7355
+Epoch: 33, Training Loss: 1.9306, Validation Loss: 1.9856, Training Accuracy: 0.4678, Validation Accuracy: 0.4653, Training Accuracy Top-5: 0.7543, Validation Accuracy Top-5: 0.7410
+Epoch: 34, Training Loss: 1.9122, Validation Loss: 1.9889, Training Accuracy: 0.4755, Validation Accuracy: 0.4703, Training Accuracy Top-5: 0.7588, Validation Accuracy Top-5: 0.7392
+Epoch: 35, Training Loss: 1.8978, Validation Loss: 1.9547, Training Accuracy: 0.4793, Validation Accuracy: 0.4731, Training Accuracy Top-5: 0.7631, Validation Accuracy Top-5: 0.7477
+Epoch: 36, Training Loss: 1.8745, Validation Loss: 2.0356, Training Accuracy: 0.4832, Validation Accuracy: 0.4649, Training Accuracy Top-5: 0.7671, Validation Accuracy Top-5: 0.7418
+Epoch: 37, Training Loss: 1.8529, Validation Loss: 1.9626, Training Accuracy: 0.4877, Validation Accuracy: 0.4762, Training Accuracy Top-5: 0.7718, Validation Accuracy Top-5: 0.7501
+Epoch: 38, Training Loss: 1.8496, Validation Loss: 1.9564, Training Accuracy: 0.4875, Validation Accuracy: 0.4705, Training Accuracy Top-5: 0.7715, Validation Accuracy Top-5: 0.7454
+Epoch: 39, Training Loss: 1.8229, Validation Loss: 1.9563, Training Accuracy: 0.4953, Validation Accuracy: 0.4766, Training Accuracy Top-5: 0.7752, Validation Accuracy Top-5: 0.7540
+Epoch: 40, Training Loss: 1.8135, Validation Loss: 1.9582, Training Accuracy: 0.4986, Validation Accuracy: 0.4746, Training Accuracy Top-5: 0.7776, Validation Accuracy Top-5: 0.7500
+Epoch: 41, Training Loss: 1.7982, Validation Loss: 1.9437, Training Accuracy: 0.4993, Validation Accuracy: 0.4875, Training Accuracy Top-5: 0.7832, Validation Accuracy Top-5: 0.7503
+Epoch: 42, Training Loss: 1.7957, Validation Loss: 1.9434, Training Accuracy: 0.5012, Validation Accuracy: 0.4877, Training Accuracy Top-5: 0.7804, Validation Accuracy Top-5: 0.7536
+Epoch: 43, Training Loss: 1.7736, Validation Loss: 1.9794, Training Accuracy: 0.5049, Validation Accuracy: 0.4845, Training Accuracy Top-5: 0.7846, Validation Accuracy Top-5: 0.7586
+Epoch: 44, Training Loss: 1.7675, Validation Loss: 1.9181, Training Accuracy: 0.5070, Validation Accuracy: 0.4861, Training Accuracy Top-5: 0.7876, Validation Accuracy Top-5: 0.7577
+Epoch: 45, Training Loss: 1.7591, Validation Loss: 1.9458, Training Accuracy: 0.5118, Validation Accuracy: 0.4877, Training Accuracy Top-5: 0.7895, Validation Accuracy Top-5: 0.7575
+Epoch: 46, Training Loss: 1.7465, Validation Loss: 1.9428, Training Accuracy: 0.5109, Validation Accuracy: 0.4831, Training Accuracy Top-5: 0.7909, Validation Accuracy Top-5: 0.7563
+Epoch: 47, Training Loss: 1.7273, Validation Loss: 1.9162, Training Accuracy: 0.5192, Validation Accuracy: 0.4891, Training Accuracy Top-5: 0.7949, Validation Accuracy Top-5: 0.7567
+Epoch: 48, Training Loss: 1.7149, Validation Loss: 1.9269, Training Accuracy: 0.5180, Validation Accuracy: 0.5036, Training Accuracy Top-5: 0.7974, Validation Accuracy Top-5: 0.7589
+Epoch: 49, Training Loss: 1.7058, Validation Loss: 1.9341, Training Accuracy: 0.5235, Validation Accuracy: 0.4927, Training Accuracy Top-5: 0.7992, Validation Accuracy Top-5: 0.7577
+Epoch: 50, Training Loss: 1.6910, Validation Loss: 1.9828, Training Accuracy: 0.5223, Validation Accuracy: 0.4848, Training Accuracy Top-5: 0.8009, Validation Accuracy Top-5: 0.7589
+Epoch: 51, Training Loss: 1.6885, Validation Loss: 1.9214, Training Accuracy: 0.5246, Validation Accuracy: 0.4887, Training Accuracy Top-5: 0.8032, Validation Accuracy Top-5: 0.7586
+Epoch: 52, Training Loss: 1.6806, Validation Loss: 1.9201, Training Accuracy: 0.5289, Validation Accuracy: 0.4946, Training Accuracy Top-5: 0.8058, Validation Accuracy Top-5: 0.7610
+Epoch: 53, Training Loss: 1.6739, Validation Loss: 1.8615, Training Accuracy: 0.5285, Validation Accuracy: 0.5066, Training Accuracy Top-5: 0.8041, Validation Accuracy Top-5: 0.7675
+Epoch: 54, Training Loss: 1.6595, Validation Loss: 1.9647, Training Accuracy: 0.5345, Validation Accuracy: 0.4941, Training Accuracy Top-5: 0.8065, Validation Accuracy Top-5: 0.7595
+Epoch: 55, Training Loss: 1.6488, Validation Loss: 1.8683, Training Accuracy: 0.5326, Validation Accuracy: 0.5014, Training Accuracy Top-5: 0.8082, Validation Accuracy Top-5: 0.7709
+Epoch: 56, Training Loss: 1.6498, Validation Loss: 1.8502, Training Accuracy: 0.5337, Validation Accuracy: 0.5059, Training Accuracy Top-5: 0.8094, Validation Accuracy Top-5: 0.7706
+Epoch: 57, Training Loss: 1.6335, Validation Loss: 1.8611, Training Accuracy: 0.5389, Validation Accuracy: 0.5086, Training Accuracy Top-5: 0.8128, Validation Accuracy Top-5: 0.7731
+Epoch: 58, Training Loss: 1.6266, Validation Loss: 1.8999, Training Accuracy: 0.5420, Validation Accuracy: 0.5009, Training Accuracy Top-5: 0.8138, Validation Accuracy Top-5: 0.7622
+Epoch: 59, Training Loss: 1.6193, Validation Loss: 1.8769, Training Accuracy: 0.5417, Validation Accuracy: 0.5082, Training Accuracy Top-5: 0.8138, Validation Accuracy Top-5: 0.7709
+Epoch: 60, Training Loss: 1.6070, Validation Loss: 1.9118, Training Accuracy: 0.5435, Validation Accuracy: 0.4954, Training Accuracy Top-5: 0.8178, Validation Accuracy Top-5: 0.7628
+Epoch: 61, Training Loss: 1.6087, Validation Loss: 1.8771, Training Accuracy: 0.5433, Validation Accuracy: 0.5113, Training Accuracy Top-5: 0.8181, Validation Accuracy Top-5: 0.7681
+Epoch: 62, Training Loss: 1.5883, Validation Loss: 1.8789, Training Accuracy: 0.5504, Validation Accuracy: 0.5036, Training Accuracy Top-5: 0.8212, Validation Accuracy Top-5: 0.7692
+Epoch: 63, Training Loss: 1.5830, Validation Loss: 1.8752, Training Accuracy: 0.5512, Validation Accuracy: 0.5105, Training Accuracy Top-5: 0.8230, Validation Accuracy Top-5: 0.7764
+Epoch: 64, Training Loss: 1.5748, Validation Loss: 1.8742, Training Accuracy: 0.5514, Validation Accuracy: 0.5059, Training Accuracy Top-5: 0.8242, Validation Accuracy Top-5: 0.7708
+Epoch: 65, Training Loss: 1.5775, Validation Loss: 1.8803, Training Accuracy: 0.5508, Validation Accuracy: 0.4946, Training Accuracy Top-5: 0.8223, Validation Accuracy Top-5: 0.7655
+Epoch: 66, Training Loss: 1.5659, Validation Loss: 1.9066, Training Accuracy: 0.5570, Validation Accuracy: 0.5032, Training Accuracy Top-5: 0.8248, Validation Accuracy Top-5: 0.7694
+Epoch: 67, Training Loss: 1.5497, Validation Loss: 1.8781, Training Accuracy: 0.5580, Validation Accuracy: 0.5106, Training Accuracy Top-5: 0.8283, Validation Accuracy Top-5: 0.7758
+Epoch: 68, Training Loss: 1.5493, Validation Loss: 1.8593, Training Accuracy: 0.5630, Validation Accuracy: 0.5032, Training Accuracy Top-5: 0.8287, Validation Accuracy Top-5: 0.7708
+Epoch: 69, Training Loss: 1.5485, Validation Loss: 1.8537, Training Accuracy: 0.5571, Validation Accuracy: 0.5075, Training Accuracy Top-5: 0.8282, Validation Accuracy Top-5: 0.7797
+Epoch: 70, Training Loss: 1.5410, Validation Loss: 1.8374, Training Accuracy: 0.5602, Validation Accuracy: 0.5146, Training Accuracy Top-5: 0.8293, Validation Accuracy Top-5: 0.7744
+Epoch: 71, Training Loss: 1.5198, Validation Loss: 1.8917, Training Accuracy: 0.5656, Validation Accuracy: 0.5060, Training Accuracy Top-5: 0.8345, Validation Accuracy Top-5: 0.7741
+Epoch: 72, Training Loss: 1.5337, Validation Loss: 1.8794, Training Accuracy: 0.5633, Validation Accuracy: 0.5156, Training Accuracy Top-5: 0.8305, Validation Accuracy Top-5: 0.7767
+Epoch: 73, Training Loss: 1.5174, Validation Loss: 1.8489, Training Accuracy: 0.5665, Validation Accuracy: 0.5077, Training Accuracy Top-5: 0.8357, Validation Accuracy Top-5: 0.7781
+Epoch: 74, Training Loss: 1.5114, Validation Loss: 1.8304, Training Accuracy: 0.5668, Validation Accuracy: 0.5132, Training Accuracy Top-5: 0.8357, Validation Accuracy Top-5: 0.7757
+Epoch: 75, Training Loss: 1.5126, Validation Loss: 1.9339, Training Accuracy: 0.5707, Validation Accuracy: 0.5089, Training Accuracy Top-5: 0.8347, Validation Accuracy Top-5: 0.7725
+Epoch: 76, Training Loss: 1.5273, Validation Loss: 1.8868, Training Accuracy: 0.5670, Validation Accuracy: 0.5072, Training Accuracy Top-5: 0.8326, Validation Accuracy Top-5: 0.7787
+Epoch: 77, Training Loss: 1.4891, Validation Loss: 1.8817, Training Accuracy: 0.5736, Validation Accuracy: 0.5183, Training Accuracy Top-5: 0.8396, Validation Accuracy Top-5: 0.7759
+Epoch: 78, Training Loss: 1.4998, Validation Loss: 1.8596, Training Accuracy: 0.5708, Validation Accuracy: 0.5176, Training Accuracy Top-5: 0.8384, Validation Accuracy Top-5: 0.7801
+Epoch: 79, Training Loss: 1.4824, Validation Loss: 1.8506, Training Accuracy: 0.5741, Validation Accuracy: 0.5222, Training Accuracy Top-5: 0.8419, Validation Accuracy Top-5: 0.7837
+Epoch: 80, Training Loss: 1.4909, Validation Loss: 1.8260, Training Accuracy: 0.5753, Validation Accuracy: 0.5140, Training Accuracy Top-5: 0.8395, Validation Accuracy Top-5: 0.7824
+Epoch: 81, Training Loss: 1.4859, Validation Loss: 1.9015, Training Accuracy: 0.5734, Validation Accuracy: 0.5194, Training Accuracy Top-5: 0.8408, Validation Accuracy Top-5: 0.7788
+Epoch: 82, Training Loss: 1.4752, Validation Loss: 1.8416, Training Accuracy: 0.5791, Validation Accuracy: 0.5183, Training Accuracy Top-5: 0.8418, Validation Accuracy Top-5: 0.7792
+Epoch: 83, Training Loss: 1.4661, Validation Loss: 1.8663, Training Accuracy: 0.5794, Validation Accuracy: 0.5215, Training Accuracy Top-5: 0.8437, Validation Accuracy Top-5: 0.7780
+Epoch: 84, Training Loss: 1.4657, Validation Loss: 1.8439, Training Accuracy: 0.5775, Validation Accuracy: 0.5169, Training Accuracy Top-5: 0.8451, Validation Accuracy Top-5: 0.7811
+Epoch: 85, Training Loss: 1.4497, Validation Loss: 1.8945, Training Accuracy: 0.5843, Validation Accuracy: 0.5142, Training Accuracy Top-5: 0.8475, Validation Accuracy Top-5: 0.7758
+Epoch: 86, Training Loss: 1.4418, Validation Loss: 1.9016, Training Accuracy: 0.5854, Validation Accuracy: 0.5159, Training Accuracy Top-5: 0.8486, Validation Accuracy Top-5: 0.7787
+Epoch: 87, Training Loss: 1.4486, Validation Loss: 1.8660, Training Accuracy: 0.5824, Validation Accuracy: 0.5219, Training Accuracy Top-5: 0.8466, Validation Accuracy Top-5: 0.7768
+Epoch: 88, Training Loss: 1.4687, Validation Loss: 1.8526, Training Accuracy: 0.5775, Validation Accuracy: 0.5274, Training Accuracy Top-5: 0.8423, Validation Accuracy Top-5: 0.7843
+Epoch: 89, Training Loss: 1.4278, Validation Loss: 1.8888, Training Accuracy: 0.5869, Validation Accuracy: 0.5133, Training Accuracy Top-5: 0.8503, Validation Accuracy Top-5: 0.7833
+Epoch: 90, Training Loss: 1.4463, Validation Loss: 1.9028, Training Accuracy: 0.5821, Validation Accuracy: 0.5228, Training Accuracy Top-5: 0.8472, Validation Accuracy Top-5: 0.7861
+Epoch: 91, Training Loss: 1.4260, Validation Loss: 1.8960, Training Accuracy: 0.5895, Validation Accuracy: 0.5194, Training Accuracy Top-5: 0.8508, Validation Accuracy Top-5: 0.7838
+Epoch: 92, Training Loss: 1.4333, Validation Loss: 1.8295, Training Accuracy: 0.5874, Validation Accuracy: 0.5278, Training Accuracy Top-5: 0.8500, Validation Accuracy Top-5: 0.7831
+Epoch: 93, Training Loss: 1.4235, Validation Loss: 1.8207, Training Accuracy: 0.5916, Validation Accuracy: 0.5248, Training Accuracy Top-5: 0.8514, Validation Accuracy Top-5: 0.7873
+Epoch: 94, Training Loss: 1.4060, Validation Loss: 1.9359, Training Accuracy: 0.5945, Validation Accuracy: 0.5099, Training Accuracy Top-5: 0.8551, Validation Accuracy Top-5: 0.7761
+Epoch: 95, Training Loss: 1.4273, Validation Loss: 1.8436, Training Accuracy: 0.5894, Validation Accuracy: 0.5192, Training Accuracy Top-5: 0.8486, Validation Accuracy Top-5: 0.7863
+Epoch: 96, Training Loss: 1.4240, Validation Loss: 1.8732, Training Accuracy: 0.5885, Validation Accuracy: 0.5259, Training Accuracy Top-5: 0.8506, Validation Accuracy Top-5: 0.7860
+Epoch: 97, Training Loss: 1.3892, Validation Loss: 1.8638, Training Accuracy: 0.5975, Validation Accuracy: 0.5135, Training Accuracy Top-5: 0.8584, Validation Accuracy Top-5: 0.7787
+Epoch: 98, Training Loss: 1.4015, Validation Loss: 1.8762, Training Accuracy: 0.5946, Validation Accuracy: 0.5261, Training Accuracy Top-5: 0.8561, Validation Accuracy Top-5: 0.7811
+Epoch: 99, Training Loss: 1.4067, Validation Loss: 1.8324, Training Accuracy: 0.5918, Validation Accuracy: 0.5201, Training Accuracy Top-5: 0.8537, Validation Accuracy Top-5: 0.7867
+Epoch: 100, Training Loss: 1.3906, Validation Loss: 1.9004, Training Accuracy: 0.5981, Validation Accuracy: 0.5226, Training Accuracy Top-5: 0.8581, Validation Accuracy Top-5: 0.7769
+Test Loss: 1.8758, Test Accuracy: 0.5403, Test Accuracy Top-5: 0.7806
